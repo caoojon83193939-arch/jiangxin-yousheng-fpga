@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "date": "2026-10-27",
+  "rtl_files": 63,
+  "project_entries": 69,
+  "hardware_inputs_byte_identical": true,
+  "ordered_file_attributes_preserved": true,
+  "historical_projects_included": false,
+  "original_project_unchanged": true,
+  "changes": "Only packaging paths, project name and new portable build/verification helpers.",
+  "full_td_recompile_this_packaging": false,
+  "td_read_design": "PASS",
+  "td_read_design_in_independent_copy": true
+}

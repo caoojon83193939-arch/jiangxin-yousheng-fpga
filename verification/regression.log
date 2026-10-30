@@ -1,0 +1,213 @@
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_service_header -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\service_header.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_header.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\gen\info_ref.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\runtime_info_overlay.v" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\osd\info_font.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\osd\video_coord.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\service_header.vvp"
+PASS maintenance rows 1-2 identical to M12, row 3 drawn, raster below untouched
+TEST_PASS service header frames=18
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_header.sv:90: $finish called at 59921700000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_key_equiv -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\key_equiv.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_key_equiv.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\gen\key_ref.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\key_input.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\key_equiv.vvp"
+TEST_PASS key_input equivalence cycles=19731450 events=149
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_key_equiv.sv:37: $finish called at 197314550000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_spectrum_idle -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\spectrum_idle.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_spectrum_idle.sv" "D:\claudework\FPGA match\topic1_media_player\08_spectrum_bars\src\audio\spectrum_analyzer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\spectrum_idle.vvp"
+PASS tone raises the bars
+PASS silence: bars reach exactly 0, then the FFT stops (23 updates to fall)
+TEST_PASS spectrum idle gate updates=29
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_spectrum_idle.sv:52: $finish called at 51468375000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_metadata_cdc -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\metadata_cdc.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_metadata_cdc.sv" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\video\image_metadata.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\video\metadata_cdc.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\metadata_cdc.vvp"
+PASS fixed sizes, extremes, aborts, errors and restart
+TEST_PASS metadata cdc loads=36 aborted=19 commits=36 compared=1941502
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_metadata_cdc.sv:90: $finish called at 888871740000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_shaped_transition -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\shaped_transition.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_shaped_transition.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\video\frame_transition.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\osd\video_coord.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\shaped_transition.vvp"
+PASS scroll: centre-out edge, rollers, black grant, exact end
+PASS iris: aperture edge, black grant, exact end
+PASS fade: identical to the M10 uniform gain
+PASS style latch and alarm-release iris
+TEST_PASS shaped transition frames=289 checked_pixels=88780799
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_shaped_transition.sv:148: $finish called at 962907305000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_product_header -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\product_header.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\tb_product_header_m14.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\gen\info_ref.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\runtime_info_overlay.v" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\osd\info_font.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\osd\video_coord.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\product_header.vvp"
+PASS maintenance view pixel-identical to the M12 header
+PASS exhibition view: clean raster, page changes stay clean
+PASS staff settings pop up the panel for the notice time
+PASS no-image header row and alarm suppression
+TEST_PASS product header frames=46
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\tb_product_header_m14.sv:110: $finish called at 153217710000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_caption_pass -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\caption_pass.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_caption_pass.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\osd_overlay.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\glyph_rom.v" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\osd\text_rom.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\osd\video_coord.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\video\caption_pass.vvp"
+PASS ROM ticker: one toggle per complete pass, per-message length
+PASS card page restart counts a full pass
+TEST_PASS caption pass toggles=7 frames=4373
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_caption_pass.sv:57: $finish called at 519393725000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_quality_pipeline -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\pipeline\legacy_quality_pipeline.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\pipeline\tb_quality_pipeline_m14b.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_bmp_source.v" "D:\claudework\FPGA match\topic1_media_player\15_quality_scaling\src\storage\fat32_scaled_loader.v" "D:\claudework\FPGA match\topic1_media_player\15_quality_scaling\src\video\bmp_bilinear_scaler.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\video\image_metadata.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\media_ctrl.v" "D:\claudework\FPGA match\topic1_media_player\11_image_scaling\src\video\frame_fifo_write.v" "D:\claudework\FPGA match\topic1_media_player\11_image_scaling\src\video\frame_write_ready.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\pipeline\legacy_quality_pipeline.vvp" +VARIABLE=1 +FILE=scaled_variable.hex
+PASS real BMP loader + bilinear scaler + writer, both row orders, 31.25MHz memory interface
+PASS SW4 reload: same page, both modes, request during a load is served once
+PASS aborted sector drains; issued burst completes; busy memory delays ack; clean reload
+PASS missing sector timeout resets transport, retains frame and recovers
+TEST_PASS quality pipeline loads=18 commits=16
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\pipeline\tb_quality_pipeline_m14b.sv:193: $finish called at 28234450000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_control -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_control.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_tour_control_m14b.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\media_ctrl.v" "D:\claudework\FPGA match\topic1_media_player\13_exhibit_guide\src\video\frame_transition.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_control.vvp"
+PASS tour on at reset, first image iris, no fixed period
+PASS tour advance pages with fade
+PASS visitor page turn: scroll style, tour paused, advance ignored
+PASS idle resume and KEY4 toggle
+PASS alarm drops tour advances, page and tour state kept
+PASS wrap, reload and queued advance served exactly once
+TEST_PASS tour controller loads=10
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_tour_control_m14b.sv:164: $finish called at 1482630000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_pacing -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_pacing.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_tour_pacing_m14.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\tour_ctrl.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_pacing.vvp"
+PASS dwell: guard, narration, caption, minimum, forced and resend
+PASS alarm restarts dwell
+PASS idle resume, activity, alarm and no-image hold
+TEST_PASS tour pacing advances=6 resumes=1
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_tour_pacing_m14.sv:89: $finish called at 30564900000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_presentation_policy -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\presentation_policy.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_presentation_policy.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\presentation_policy.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\presentation_policy.vvp"
+PASS exhibition bilinear only, maintenance A/B, one reload per change, bounce filtered
+TEST_PASS presentation policy
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_presentation_policy.sv:46: $finish called at 85870000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_key_actions -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\key_actions.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_key_actions.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\key_actions.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\key_actions.vvp"
+PASS exhibition view: pages on KEY2/KEY3 short (KEY2 on release), brightness, tour
+PASS maintenance view: volume 1..8 saturating, dwell cycle, no page turns
+PASS alarm: set by KEY4 long, keys ignored, KEY2 press clears and is consumed
+TEST_PASS key actions logs=24
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_key_actions.sv:87: $finish called at 1570000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_uart_logger -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\uart_logger.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_uart_logger.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\uart_logger.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\uart_logger.vvp"
+TEST_PASS uart logger lines=20
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_uart_logger.sv:81: $finish called at 42896994000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_service_audio -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\service_audio.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_audio.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\gen\audio_ref.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\service_audio.vvp"
+TEST_PASS service audio volume checked=2289
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_audio.sv:55: $finish called at 4580100000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_service_misc -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\service_misc.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_misc.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\uptime_clock.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\alarm_buzzer.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\seg_pages.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\service_misc.vvp"
+PASS uptime ms and BCD h:m:s including 99:59:59 -> 00:00:00
+PASS buzzer: square wave, 800/1000 Hz in step with the siren, silent outside the alarm
+TEST_PASS service misc (uptime, buzzer, staff pages 5/6)
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_service_misc.sv:67: $finish called at 38335230000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_sd_recovery -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\sd_recovery.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_sd_recovery.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\sd_recovery.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\sd_recovery.vvp"
+PASS init watchdog: 3 s period, stops once the card is up
+PASS NO IMAGE retry: resets then rescan event, repeats, stops when cleared
+PASS reader-only retry
+TEST_PASS sd recovery count=6
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_sd_recovery.sv:68: $finish called at 10400860000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_noimg_retry -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\noimg_retry.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_noimg_retry.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\media_ctrl.v" "D:\claudework\FPGA match\topic1_media_player\13_exhibit_guide\src\video\frame_transition.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\noimg_retry.vvp"
+PASS init failure and scan fault both end in NO IMAGE
+TEST_PASS NO IMAGE retry scans=2
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_noimg_retry.sv:94: $finish called at 390720000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_power_ctrl -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\power_ctrl.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_power_ctrl.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\power_ctrl.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\power_ctrl.vvp"
+PASS standby entry: 2 s combination, short hold and alarm rejected, release ignored
+PASS wake on press, key mask until release, 2 s dark
+TEST_PASS power controller
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_power_ctrl.sv:55: $finish called at 29835360000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_dwell -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_dwell.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_tour_dwell.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\tour_ctrl.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tour_dwell.vvp"
+TEST_PASS tour dwell selection advances=5
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_tour_dwell.sv:43: $finish called at 19544180000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_seg_pages -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\seg_pages.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_seg_pages_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\seg_pages.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\seg_scan8.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\seg_pages.vvp"
+PASS pages: status, resolution, scaling, picture, spectrum
+PASS jumps, blanking, errors, alarm, rotation
+TEST_PASS seg pages and eight-digit scan (8 digits)
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_seg_pages_m15.sv:95: $finish called at 7442406000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case0.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case0.vvp" +CASE=0
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:157: $readmemh(guide_disk_0.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:157: $readmemh(guide_map_0.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=0 frames=2487 switches=6 music=1808 narr1=300 narr3=379 images=301
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 7267080000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case1.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case1.vvp" +CASE=1
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:158: $readmemh(guide_disk_1.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:158: $readmemh(guide_map_1.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=1 narration-only: silent start, loop=1, silent page, no tone
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 6280680000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case2.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case2.vvp" +CASE=2
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:160: $readmemh(guide_disk_2.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:160: $readmemh(guide_map_2.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=2 test tone=250 samples, mute, alarm priority, no underrun
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 1882320000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case3.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case3.vvp" +CASE=3
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:160: $readmemh(guide_disk_2.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:160: $readmemh(guide_map_2.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=3 test tone=250 samples, mute, alarm priority, no underrun
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 2000240000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case4.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case4.vvp" +CASE=4
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:159: $readmemh(guide_disk_0.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:159: $readmemh(guide_map_0.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=4 tour: narration once, silence, guide_done, no underrun
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 5604365000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_tour_reader -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case5.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\storage\fat32_guide_reader.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\reset_sync.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\audio\guide_audio_output.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\audio_tone_pcm.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\audio\alarm_tone_sel.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\storage\sd_sector_arbiter.v" "D:\claudework\FPGA match\topic1_media_player\09_reliability\src\audio\pcm_bank_buffer.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tour_reader_case5.vvp" +CASE=5
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:159: $readmemh(guide_disk_0.hex): Not enough words in the file for the requested range [0:65535].
+WARNING: D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:159: $readmemh(guide_map_0.hex): Not enough words in the file for the requested range [0:127].
+PASS guide CASE=5 card fault -> FAILED, reader reset -> catalog and playback recover
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\audio\tb_tour_reader_m15.sv:275: $finish called at 3487890000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_guide_control -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\legacy_guide_control.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_guide_control_m14b.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\media_ctrl.v" "D:\claudework\FPGA match\topic1_media_player\13_exhibit_guide\src\video\frame_transition.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\legacy_guide_control.vvp"
+PASS alarm keeps exhibit, release fades in, autoplay resumes
+PASS in-flight switch under alarm restores the alarm-time exhibit
+PASS startup alarm shows first exhibit only
+TEST_PASS guide controller loads=6 commits=4
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_guide_control_m14b.sv:195: $finish called at 459350000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_fat32_control -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\legacy_fat32_control.vvp" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_fat32_control_m14b.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\ctrl\media_ctrl.v" "D:\claudework\FPGA match\topic1_media_player\13_exhibit_guide\src\video\frame_transition.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\legacy_fat32_control.vvp"
+PASS emergency page takeover, restore and autoplay preservation
+PASS takeover after an in-flight normal switch
+PASS exit during safety-page load
+PASS safety-page load failure keeps old frame
+PASS repaired in-flight departure from safety page
+PASS fewer-than-four-images fallback
+PASS startup emergency and restore
+PASS rapid exit/reentry retains original resume page
+PASS 1000 busy-load button pulses coalesced without concurrent buffer ownership
+PASS commit wait timeout, held abort acknowledgement, late completion, clean reuse
+PASS error wins over simultaneous swap grant
+PASS missing card timeout and explicit rescan retry
+PASS sparse IMG02/IMG04 catalog takeover and restore
+TEST_PASS reliable controller loads=128 commits=120
+D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\ctrl\tb_fat32_control_m14b.sv:290: $finish called at 9929480000 (1ps)
+
+$ D:\iverilog\bin\iverilog.exe -g2012 -s tb_subtitle_osd -o "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\osd\legacy_subtitle_osd.vvp" "D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_subtitle_osd.sv" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\gen\osd_ref.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\osd_overlay.v" "D:\claudework\FPGA match\topic1_media_player\18_service_tools\src\osd\glyph_rom.v" "D:\claudework\FPGA match\topic1_media_player\12_runtime_osd\src\osd\text_rom.v" "D:\claudework\FPGA match\topic1_media_player\03_osd_emergency\src\osd\video_coord.v"
+$ D:\iverilog\bin\vvp.exe "D:\claudework\FPGA match\topic1_media_player\18_service_tools\build\sim\osd\legacy_subtitle_osd.vvp"
+PASS subtitle OSD frames dumped
+D:\claudework\FPGA match\topic1_media_player\sim\tb\tb_subtitle_osd.sv:83: $finish called at 24034730000 (1ps)
